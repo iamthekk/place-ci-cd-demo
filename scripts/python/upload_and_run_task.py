@@ -34,6 +34,8 @@ def upload_place(binary_path, universe_id, place_id, do_publish=False):
     with urllib.request.urlopen(req) as response:
         data = json.loads(response.read().decode("utf-8"))
         place_version = data.get("versionNumber")
+        
+        print("Upload success")
 
         return place_version
 
